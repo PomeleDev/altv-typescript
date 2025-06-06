@@ -21,3 +21,6 @@ npm -v
 
 提示 `found 0 vulnerabilities` 即为安装成功
 
+**第四步** 执行脚本命令
+脚本命令 位于package.json中 `"scripts": {} ` 
+在**CMD终端**执行`npm run update`
