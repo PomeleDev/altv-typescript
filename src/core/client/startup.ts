@@ -5,7 +5,20 @@ alt.onServer('log:Console', handleLogConsole);
 // 监听服务器端发送的 'do-something' 事件，并绑定处理函数 handleDoSomething
 alt.onServer('do-something', handleDoSomething);
 // 监听服务器端发送的 'example' 事件，并绑定处理函数 handleExample
-alt.onServer('example', handleExample);
+// alt.onServer('example', handleExample);
+
+// 监听玩家按键事件，当按下 F1 时执行 handleF1KeyDown
+alt.on('keydown', (key: number) => {
+    if (key === 112) {
+        printUserInfoformation();
+    }
+})
+// 打印用户ID、位置、旋转角度等信息
+function printUserInfoformation(){
+    alt.log(`ID: ${alt.Player.local.id}`)
+    alt.log(`POS: ${JSON.stringify(alt.Player.local.pos)}`)
+    alt.log(`ROT: ${JSON.stringify(alt.Player.local.rot)}`)
+}
 
 function handleLogConsole(msg: string) {
     alt.log(msg);
