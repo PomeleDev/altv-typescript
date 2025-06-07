@@ -24,3 +24,10 @@ npm -v
 **第四步** 执行脚本命令
 脚本命令 位于package.json中 `"scripts": {} ` 
 在**CMD终端**执行`npm run update`
+
+
+**第五步** 编译脚本
+执行`npm run build` 可以生成ts对应的js文件
+
+**第六步** 运行开发环境
+执行`npm run dev` 开启开发环境服务器
