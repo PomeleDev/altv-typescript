@@ -26,5 +26,5 @@ host = '0.0.0.0'
 global-webcrypto = true
 global-fetch = true
 
-[voice]
-bitrate = 64000
+# [voice]
+# bitrate = 64000

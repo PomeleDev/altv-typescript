@@ -9,5 +9,17 @@ function handlePlayerConnect(player: alt.Player) {
 
     player.model = 'mp_m_freemode_01';
     player.spawn(36.19486618041992, 859.3850708007812, 197.71343994140625, 0);
+    
     alt.emitClient(player, 'log:Console', 'alt:V Server - Boilerplate Started');
+
+    // 向客户端发送一个名为 'do-something' 的事件，并传递参数 'hello'
+    alt.emitClient(player, 'do-something', 'hello')
+}
+// 监听客户端发来的名为 'do-something' 的事件，并绑定处理函数 doSomething
+alt.onClient('do-something', doSomething);
+
+// 处理函数 doSomething，接收玩家对象和消息字符串作为参数
+function doSomething(player: alt.Player, msg: string) {
+    // 打印日志，显示从客户端收到的消息内容
+    console.log(`Hello we got ... ${msg} from the 'client'.`);
 }
