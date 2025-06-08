@@ -28,3 +28,8 @@ global-fetch = true
 
 # [voice]
 # bitrate = 64000
+
+# 日志
+logStreams = [ "console", "file" ]
+logTimeFormat = "%Y-%m-%d %H:%M:%S"
+logsToKeep = 7
