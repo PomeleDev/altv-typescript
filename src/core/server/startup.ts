@@ -2,5 +2,6 @@
 import './events/playerConnect.js';
 
 // Systems
-import './systems/weaponGiver.js';
+import weaponGiver from './systems/weaponGiver.js';
 // import './systems/weaponGiverAgain.js';
+weaponGiver.init();
