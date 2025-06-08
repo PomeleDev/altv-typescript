@@ -1,4 +1,5 @@
 import * as alt from 'alt-server';
+import { RGBA } from 'alt-shared';
 
 type WeaponInfo = { weaponHash: number; identifier: string; pos: alt.IVector3 };
 const identifiers: Array<WeaponInfo> = [];
@@ -47,7 +48,7 @@ const WeaponGiver = {
     init() {
         alt.log('Weapon Giver file was registered.');
     },
-    add(pos: alt.IVector3, identifier: string, weaponHash: number,) {
+    add(pos: alt.IVector3, identifier: string, weaponHash: number, sprite: number, name: string, color: number) {
         identifiers.push({
             pos,
             identifier,
@@ -60,7 +61,11 @@ const WeaponGiver = {
 
 
         const blip = new alt.PointBlip(pos.x, pos.y, pos.z, true);
-        blip.sprite = 361;
+        blip.sprite = sprite;
+        blip.name = name;
+        blip.scale = 1;
+        blip.color = color;
+        blip.blipType = 4;
     },
 };
 
@@ -72,11 +77,17 @@ alt.on('entityLeaveColshape', handleLeaveColshape);
 WeaponGiver.add(
     { x: 28.27446174621582, y: 852.566650390625, z: 196.73324584960938 },
     'weapon-pistol-giver',
-    alt.hash('WEAPON_PISTOL')
+    alt.hash('WEAPON_PISTOL'),
+    156,
+    "手枪",
+    0,
 );
 
 WeaponGiver.add(
     { x: 27.670907974243164, y: 860.95947265625, z: 196.7394256591797 },
     'weapon-rpg-giver',
-    alt.hash('WEAPON_RPG')
+    alt.hash('WEAPON_RPG'),
+    157,
+    "RPG",
+    9,
 );
