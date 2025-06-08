@@ -1,5 +1,5 @@
 import * as alt from 'alt-server';
-import { RGBA } from 'alt-shared';
+import Marker from './marker.js';
 
 type WeaponInfo = { weaponHash: number; identifier: string; pos: alt.IVector3 };
 const identifiers: Array<WeaponInfo> = [];
@@ -65,7 +65,8 @@ const WeaponGiver = {
         blip.name = name;
         blip.scale = 1;
         blip.color = color;
-        blip.blipType = 4;
+
+        Marker.add(pos, new alt.RGBA(0, 255, 0, 100), 1);
     },
 };
 
