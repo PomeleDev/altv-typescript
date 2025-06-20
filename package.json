@@ -7,7 +7,8 @@
         "build": "node ./scripts/compiler.js && node ./scripts/copy.js",
         "windows": "npm run build && altv-server.exe",
         "linux": "npm run build && ./altv-server",
-        "dev": "node ./scripts/watch.js"
+        "dev": "node ./scripts/watch.js",
+        "start": "node ./scripts/compiler.js && node ./scripts/copy.js && altv-server"
     },
     "author": "stuyk",
     "license": "ISC",

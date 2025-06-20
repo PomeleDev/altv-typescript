@@ -1,5 +1,5 @@
 type = 'js'
-main = 'server/startup.js'
+main = 'server/index.js'
 client-files = [ 'client/*', 'shared/*' ]
-client-main = 'client/startup.js'
+client-main = 'client/index.js'
 deps = []
